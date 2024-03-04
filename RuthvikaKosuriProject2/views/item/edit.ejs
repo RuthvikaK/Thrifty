@@ -1,0 +1,60 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="formbox">
+            <form method='POST' action='/items/<%= item.id%>?_method=PUT' enctype="multipart/form-data">
+                <div class="newform">
+                    <label for="title">Title</label><br>
+                    <input type="text" name="title" id="title" placeholder="title" value="<%= item.title%>" required>
+                </div>
+                <div class="newform">
+                    <label for="seller">Seller</label><br>
+                    <input type="text" name="seller" id="seller" placeholder="seller" value="<%= item.seller%>" required>
+                </div>
+                <div class="newform">
+                    <label for="section">Section</label><br>
+                    <select name="section" id="section">
+                        <option value="<%= item.section%>"><%= item.section%></option>
+                        <option value="women">women</option>
+                        <option value="men">men</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+                <div class="newform">
+                    <label for="condition">Condition</label><br>
+                    <select name="condition" id="condition" required>
+                        <option value="<%= item.condition%>"><%= item.condition%></option>
+                        <option value="new">New</option>
+                        <option value="like new">Like New</option>
+                        <option value="very good">Very Good</option>
+                        <option value="good">Good</option>
+                        <option value="other">Other(please add details in the details section)</option>
+                    </select>
+                </div>
+                <div class="newform">
+                    <label for="size">Size</label><br>
+                    <select name="size" id="size" required>
+                        <option value="<%= item.size%>"><%= item.size%></option>
+                        <option value="extra-small">extra-small</option>
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="other">Other(please add details in the details section)</option>
+                    </select>
+                </div>
+                <div class="newform">
+                    <label for="price">Price</label><br>
+                    <input type="number" name="price" id="price" placeholder="price" value="<%= item.price%>" required>
+                </div>
+                <div class="newform">
+                    <label for="details">Details</label><br>
+                    <textarea name="details" id="details" placeholder="details" value="<%= item.details%>" required><%= item.details%></textarea>
+                </div>
+                <div class="newform">
+                    <label for="file">Image</label><br>
+                    <input type="file" name="image" id="file" required>
+                </div>
+                <input type="submit" name="submit" id ="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

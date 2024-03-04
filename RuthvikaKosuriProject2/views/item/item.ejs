@@ -1,0 +1,14 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <div class="single">
+            <img src="<%= item.image%>" alt="<%= item.details%>" width="400" height="450">
+            <aside>
+                <p>Title: <%= item.title%><br><br>Condition: <%= item.condition%><br><br>Price: $<%= item.price%><br><br>Seller: <%= item.seller%><br><br> Size: <%= item.size%><br><br> Details: <%= item.details%><br><br>Offers: <%= item.totalOffers%></p>
+                <form>
+                    <button type="submit" formmethod="GET" formaction="/items/<%= item.id%>/edit" class="itembtn">Edit</button>
+                    <button type="submit" formmethod="POST" formaction="/items/<%= item.id%>?_method=DELETE" class="itembtn">Delete</button>
+                </form>
+            </aside>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>

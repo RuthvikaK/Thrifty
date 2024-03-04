@@ -1,0 +1,94 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+        <section>
+            <p class="listing">Women's Section</p>
+            <div class="carousel-container">
+                <button class="carousel-btn left"><i class="fa-solid fa-chevron-left"></i></button>
+                <ul class="carousel">
+                    <%if(items.length) {%>
+                        <%items.forEach((item) => {%>
+                            <%if(item.section == 'women'){%>
+                                <li class="carousel-item">
+                                    <div class="item">
+                                        <a href="/items/<%= item.id%>"><img src="<%= item.image%>" alt="<%= item.details%>"></a>
+                                        <a href="/items/<%= item.id%>"><p class="desc">Title: <%= item.title%><br> Seller: <%= item.seller%><br> Condition: <%= item.condition%><br> Price: $<%= item.price%><br> Size: <%= item.size%><br> Details: <%= item.details%><br> Offers: <%= item.totalOffers%></p></a>
+                                    </div>
+                                </li>
+                            <%}%>
+                        <%});%>
+                    <%} else {%>
+                        <p>There are no items to display</p>
+                    <%}%>
+                    <!-- <li class="carousel-item">
+                        <div class="item">
+                            <a href="item.html"><img src="images/w1.jpg" alt="Sweatshirt"></a>
+                            <p>Title: Sweatshirt<br> Condition: New<br> Price: $10.00<br> Size: extra-small<br> Details: Never used, good quality<br> Offers: 2</p>
+                        </div>
+                    </li>
+                     -->
+                </ul>
+                <button class="carousel-btn right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+        <section>
+            <p class="listing">Men's Section</p>
+            <div class="carousel-container">
+                <button class="carousel-btn left"><i class="fa-solid fa-chevron-left"></i></button>
+                <ul class="carousel">
+                    <%if(items.length) {%>
+                        <%items.forEach((item) => {%>
+                            <%if(item.section == 'men'){%>
+                                <li class="carousel-item">
+                                    <div class="item">
+                                        <a href="/items/<%= item.id%>"><img src="<%= item.image%>" alt="<%= item.details%>"></a>
+                                        <a href="/items/<%= item.id%>"><p class="desc">Title: <%= item.title%><br> Seller: <%= item.seller%><br> Condition: <%= item.condition%><br> Price: $<%= item.price%><br> Size: <%= item.size%><br> Details: <%= item.details%><br> Offers: <%= item.totalOffers%></p></a>
+                                    </div>
+                                </li>
+                            <%}%>
+                        <%});%>
+                    <%} else {%>
+                        <p>There are no items to display</p>
+                    <%}%>
+                    <!-- <li class="carousel-item">
+                        <div class="item">
+                            <a href="item.html"><img src="images/m1.jpg" alt="Shirt"></a>
+                            <p>Title: Shirt<br> Condition: New<br> Price: $5.00<br> Size: extra-small<br> Details: worn twice<br> Offers: 3</p>
+                        </div>
+                    </li>
+                     -->
+                </ul>
+                <button class="carousel-btn right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+        <section>
+            <p class="listing">Furniture/Other Items</p>
+            <div class="carousel-container">
+                <button class="carousel-btn left"><i class="fa-solid fa-chevron-left"></i></button>
+                <ul class="carousel">
+                    <%if(items.length) {%>
+                        <%items.forEach((item) => {%>
+                            <%if(item.section == 'other'){%>
+                                <li class="carousel-item">
+                                    <div class="item">
+                                        <a href="/items/<%= item.id%>"><img src="<%= item.image%>" alt="<%= item.details%>"></a>
+                                        <a href="/items/<%= item.id%>"><p class="desc">Title: <%= item.title%><br> Seller: <%= item.seller%><br> Condition: <%= item.condition%><br> Price: $<%= item.price%><br> Size: <%= item.size%><br> Details: <%= item.details%><br> Offers: <%= item.totalOffers%></p></a>
+                                    </div>
+                                </li>
+                            <%}%>
+                        <%});%>
+                    <%} else {%>
+                        <p>There are no items to display</p>
+                    <%}%>
+                    <!-- <li class="carousel-item">
+                        <div class="item">
+                            <a href="item.html"><img src="images/o1.jpg" alt="Chair"></a>
+                            <p>Title: Chair<br> Condition: New<br> Price: $25.00<br> Details: bought recently<br> Offers: 5</p>
+                        </div>
+                    </li>
+                     -->
+                </ul>
+                <button class="carousel-btn right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs')%>
