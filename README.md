@@ -1,0 +1,2 @@
+# Thrifty
+Online thrifting platform
